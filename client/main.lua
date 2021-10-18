@@ -104,6 +104,7 @@ AddEventHandler('prison:client:Enter', function(time)
 	while not IsScreenFadedOut() do
 		Citizen.Wait(10)
 	end
+	ChangeOutfit()
 	local RandomStartPosition = Config.Locations.spawns[math.random(1, #Config.Locations.spawns)]
 	SetEntityCoords(PlayerPedId(), RandomStartPosition.coords.x, RandomStartPosition.coords.y, RandomStartPosition.coords.z - 0.9, 0, 0, 0, false)
 	SetEntityHeading(PlayerPedId(), RandomStartPosition.coords.w)
@@ -184,6 +185,16 @@ AddEventHandler('prison:client:UnjailPerson', function()
 		DoScreenFadeIn(1000)
 	end
 end)
+
+function ChangeOutfit()
+    local ped = PlayerPedId()
+    local gender = QBCore.Functions.GetPlayerData().charinfo.gender
+    if gender == 0 then
+        TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.male)
+    else
+        TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.female)
+    end
+end
 
 function CreateCellsBlip()
 	if CellsBlip ~= nil then
