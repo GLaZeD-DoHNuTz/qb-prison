@@ -111,3 +111,27 @@ Config.CanteenItems = {
         slot = 2,
     },
 }
+
+--MAKE SURE YOU CHANGE THE ITEMS AND TEXTURE TO FIT WITH YOUR SERVERS CLOTHING PACKS!!--
+Config.Uniforms = {
+	['male'] = {
+		outfitData = {
+			['t-shirt'] = {item = 15, texture = 0},
+			['torso2']  = {item = 53, texture = 0},
+			['arms']    = {item = 85, texture = 0},
+			['pants']   = {item = 38, texture = 0},
+			['shoes']   = {item = 6, texture = 0},
+			['mask']   = {item = 0, texture = 0},
+		}
+	},
+	['female'] = {
+	 	outfitData = {
+			['t-shirt'] = {item = 15, texture = 0},
+			['torso2']  = {item = 53, texture = 0},
+			['arms']    = {item = 85, texture = 0},
+			['pants']   = {item = 38, texture = 0},
+			['shoes']   = {item = 6, texture = 0},
+			['mask']   = {item = 0, texture = 0},
+	 	}
+	},
+}
